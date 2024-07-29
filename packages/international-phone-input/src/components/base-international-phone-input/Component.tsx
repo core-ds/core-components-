@@ -15,6 +15,7 @@ import type { InputAutocompleteProps } from '@alfalab/core-components-input-auto
 import { AnyObject, BaseOption } from '@alfalab/core-components-select/shared';
 import type { BaseSelectChangePayload } from '@alfalab/core-components-select/typings';
 
+import { countriesDataExUssr, TCountriesData } from '../../data/country-data-exussr';
 import type { BaseInternationalPhoneInputProps, Country } from '../../types';
 import {
     createMaskOptions,
@@ -25,8 +26,20 @@ import {
     initCountries,
 } from '../../utils';
 import { CountrySelect } from '../country-select';
+import {flagSpriteExUssr} from '../flag-icon/flag-sprite-exussr';
 
 import styles from './index.module.css';
+
+interface IWorldDataItems {
+    flagSpriteWorld: Record<string, string>;
+    countriesDataWorld: TCountriesData[];
+}
+
+interface IWorldData {
+    worldData?: IWorldDataItems;
+}
+
+const loadWorldData = async () => import(/* webpackChunkName: "international-phone-input.world-data" */ '../../utils/world-data')
 
 export const BaseInternationalPhoneInput = forwardRef<
     HTMLInputElement,
@@ -57,7 +70,17 @@ export const BaseInternationalPhoneInput = forwardRef<
         },
         ref,
     ) => {
-        const countriesData = useMemo(() => initCountries(countries), [countries]);
+        const [countriesDataSet, setCountriesDataSet] = useState<TCountriesData[]>(
+            [
+                ...countriesDataExUssr,
+                ['Ещё', null, 'more', '']
+            ] as TCountriesData[]
+        );
+        const [flagSprite, setFlagSprite] = useState(flagSpriteExUssr);
+        const [dataType, setDataType] = useState<'exUssr' | 'world'>('exUssr');
+
+        const countriesData = useMemo(() => initCountries(countriesDataSet, countries), [countries, countriesDataSet]);
+
         const inputRef = useRef<HTMLInputElement>(null);
         const inputWrapperRef = useRef<HTMLDivElement>(null);
 
@@ -71,7 +94,28 @@ export const BaseInternationalPhoneInput = forwardRef<
         const filteredOptions = filterPhones(value, options, filterFn);
         const country = countryProp ?? selectedCountry;
 
-        const handleCountryChange = (nextCountry?: Country) => {
+        const handleCountryChange = async (nextCountry?: Country) => {
+            if (dataType === 'exUssr' && nextCountry?.iso2 === 'more') {
+                let result: IWorldData = {};
+
+                try {
+                    result = await loadWorldData()
+                } catch (e) {
+                    // eslint-disable-next-line no-console
+                    console.error(e);
+                }
+
+                if (result?.worldData) {
+                    const {worldData} = result;
+
+                    if (worldData?.flagSpriteWorld && worldData?.countriesDataWorld) {
+                        setFlagSprite({...flagSpriteExUssr, ...worldData.flagSpriteWorld})
+                        setCountriesDataSet([...countriesDataExUssr, ...worldData.countriesDataWorld].sort())
+                        setDataType('world');
+                    }
+                }
+            }
+
             if (countryProp === undefined) setSelectedCountry(nextCountry);
             onCountryChange?.(nextCountry);
         };
@@ -184,6 +228,7 @@ export const BaseInternationalPhoneInput = forwardRef<
                 country={country}
                 countries={compact ? [] : countriesData}
                 fieldWidth={inputWrapperRef.current?.getBoundingClientRect().width}
+                flagSprite={flagSprite}
                 onOpen={handleCountrySelectOpen}
                 open={showCountrySelect}
             />

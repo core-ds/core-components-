@@ -34,6 +34,7 @@ type CountrySelectProps = SharedCountrySelectProps & {
     countries?: Country[][];
     country?: Country;
     fieldWidth?: number;
+    flagSprite: Record<string, string>;
     view: 'desktop' | 'mobile';
     SelectComponent: ElementType;
 };
@@ -47,6 +48,7 @@ export const CountrySelect: React.FC<CountrySelectProps> = ({
     onChange,
     view = 'desktop',
     SelectComponent,
+    flagSprite,
     ...restProps
 }) => {
     const options = useMemo(
@@ -59,9 +61,9 @@ export const CountrySelect: React.FC<CountrySelectProps> = ({
                     value: areas[0],
                     content: (
                         <span className={styles.option}>
-                            <FlagIcon country={iso2} className={styles.flag} />
-
-                            <span className={styles.optionTextWrap}>
+                            <FlagIcon country={iso2} className={styles.flag}
+                                      flagSprite={flagSprite} />
+                            <span className='optionTextWrap'>
                                 <span className={styles.countryName}>{name}</span>
                                 <span className={styles.dialCode}>+{dialCode}</span>
                             </span>
@@ -69,7 +71,7 @@ export const CountrySelect: React.FC<CountrySelectProps> = ({
                     ),
                 };
             }) || [],
-        [countries],
+        [countries, flagSprite],
     );
 
     const renderOptionsList = useCallback(
@@ -84,7 +86,7 @@ export const CountrySelect: React.FC<CountrySelectProps> = ({
     const renderFlagIcon = () => (
         <span className={styles.flagIconWrapper}>
             {country?.iso2 ? (
-                <FlagIcon country={country.iso2} />
+                <FlagIcon country={country.iso2} flagSprite={flagSprite} />
             ) : (
                 <WorldMagnifierMIcon className={styles.emptyCountryIcon} />
             )}
@@ -111,6 +113,9 @@ export const CountrySelect: React.FC<CountrySelectProps> = ({
                             title: 'Выберите страну',
                         },
                     })}
+                    fieldProps={{
+                        flagSprite
+                    }}
                 />
             </div>
         );
