@@ -1,4 +1,4 @@
-## Dynamic
+## PageIndicatorDynamic
 
 Доступен в двух размерах: 6 и 8 рх.
 
@@ -15,7 +15,7 @@ render(() => {
     return (
         <div>
             <Container>
-                <PageIndicator.Dynamic
+                <PageIndicatorDynamic
                     size={8}
                     activeElement={activeElement}
                     elements={elements}
@@ -24,7 +24,7 @@ render(() => {
                     cycle={true}
                 />
                 <Gap size={8} />
-                <PageIndicator.Dynamic
+                <PageIndicatorDynamic
                     size={6}
                     activeElement={activeElement}
                     elements={elements}
@@ -42,7 +42,7 @@ render(() => {
 );
 ```
 
-## Bullet
+## PageIndicatorBullet
 
 Доступен в двух размерах, 6 и 8 рх. В зависимости от количества элементов меняется анимация и внешний вид индикатора. Если элементов меньше шести — все эллипсы имеют одинаковый размер.
 
@@ -56,9 +56,9 @@ render(() => {
     return (
         <div>
             <Container>
-                <PageIndicator.Bullet size={8} activeElement={activeElement} elements={elements} />
+                <PageIndicatorBullet size={8} activeElement={activeElement} elements={elements} />
                 <Gap size={8} />
-                <PageIndicator.Bullet size={6} activeElement={activeElement} elements={elements} />
+                <PageIndicatorBullet size={6} activeElement={activeElement} elements={elements} />
             </Container>
             <Row style={{ gap: 'var(--gap-xs)' }}>
                 <Button leftAddons={<ChevronLeftMIcon />} onClick={prev} />
@@ -82,9 +82,9 @@ render(() => {
     return (
         <div>
             <div>
-                <PageIndicator.Bullet size={8} activeElement={activeElement} elements={elements} />
+                <PageIndicatorBullet size={8} activeElement={activeElement} elements={elements} />
                 <Gap size={8} />
-                <PageIndicator.Bullet size={6} activeElement={activeElement} elements={elements} />
+                <PageIndicatorBullet size={6} activeElement={activeElement} elements={elements} />
             </div>
             <Row style={{ gap: 'var(--gap-xs)' }}>
                 <Button leftAddons={<ChevronLeftMIcon />} onClick={prev} />
@@ -109,9 +109,9 @@ render(() => {
     return (
         <div>
             <div>
-                <PageIndicator.Bullet size={8} activeElement={activeElement} elements={elements} />
+                <PageIndicatorBullet size={8} activeElement={activeElement} elements={elements} />
                 <Gap size={8} />
-                <PageIndicator.Bullet size={6} activeElement={activeElement} elements={elements} />
+                <PageIndicatorBullet size={6} activeElement={activeElement} elements={elements} />
             </div>
             <Row style={{ gap: 'var(--gap-xs)' }}>
                 <Button leftAddons={<ChevronLeftMIcon />} onClick={prev} />
@@ -123,7 +123,7 @@ render(() => {
 );
 ```
 
-## Step
+## PageIndicatorStep
 
 Доступен в одном размере. Ширина подстраивается под ширину контейнера.
 
@@ -137,7 +137,7 @@ render(() => {
     return (
         <div>
             <div style={{ width: 168 }}>
-                <PageIndicator.Step size={4} activeElement={activeElement} elements={elements} />
+                <PageIndicatorStep size={4} activeElement={activeElement} elements={elements} />
             </div>
             <Row style={{ gap: 'var(--gap-xs)' }}>
                 <Button leftAddons={<ChevronLeftMIcon />} onClick={prev} />
@@ -149,7 +149,7 @@ render(() => {
 );
 ```
 
-## Runner
+## PageIndicatorRunner
 
 Доступен в одном размере. Ширина подстраивается под ширину контейнера.
 
@@ -163,7 +163,7 @@ render(() => {
     return (
         <div>
             <div style={{ width: 168 }}>
-                <PageIndicator.Runner size={4} activeElement={activeElement} elements={elements} />
+                <PageIndicatorRunner size={4} activeElement={activeElement} elements={elements} />
             </div>
             <Row style={{ gap: 'var(--gap-xs)' }}>
                 <Button leftAddons={<ChevronLeftMIcon />} onClick={prev} />

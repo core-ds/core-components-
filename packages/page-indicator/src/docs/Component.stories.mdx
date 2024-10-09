@@ -1,7 +1,12 @@
 import { Meta, Story, Markdown } from '@storybook/addon-docs';
 import { boolean, select, number } from '@storybook/addon-knobs';
 import { ComponentHeader, Tabs } from 'storybook/blocks';
-import { PageIndicator } from '@alfalab/core-components-page-indicator';
+import {
+    PageIndicatorDynamic,
+    PageIndicatorBullet,
+    PageIndicatorStep,
+    PageIndicatorRunner,
+} from '@alfalab/core-components-page-indicator';
 
 import Description from './description.mdx';
 import Development from './development.mdx';
@@ -9,7 +14,7 @@ import Changelog from '../../CHANGELOG.md?raw';
 
 <Meta title='Components/PageIndicator' id='PageIndicator' component={Meta} />
 
-<Story name='PageIndicator.Dynamic'>
+<Story name='PageIndicatorDynamic'>
     {React.createElement(() => {
         const colors = select('colors', ['default', 'inverted'], 'default');
         return (
@@ -27,7 +32,7 @@ import Changelog from '../../CHANGELOG.md?raw';
                     bottom: 0,
                 }}
             >
-                <PageIndicator.Dynamic
+                <PageIndicatorDynamic
                     defaultActiveElement={number('activeElement', 0)}
                     activeElement={number('activeElement', 0)}
                     active={boolean('active', true)}
@@ -44,7 +49,7 @@ import Changelog from '../../CHANGELOG.md?raw';
     })}
 </Story>
 
-<Story name='PageIndicator.Bullet'>
+<Story name='PageIndicatorBullet'>
     {React.createElement(() => {
         const colors = select('colors', ['default', 'inverted'], 'default');
         return (
@@ -62,7 +67,7 @@ import Changelog from '../../CHANGELOG.md?raw';
                     bottom: 0,
                 }}
             >
-                <PageIndicator.Bullet
+                <PageIndicatorBullet
                     activeElement={number('activeElement', 0)}
                     size={number('size', 8)}
                     gap={number('gap', 8)}
@@ -74,7 +79,7 @@ import Changelog from '../../CHANGELOG.md?raw';
     })}
 </Story>
 
-<Story name='PageIndicator.Step'>
+<Story name='PageIndicatorStep'>
     {React.createElement(() => {
         const colors = select('colors', ['default', 'inverted'], 'default');
         return (
@@ -92,7 +97,7 @@ import Changelog from '../../CHANGELOG.md?raw';
                     bottom: 0,
                 }}
             >
-                <PageIndicator.Step
+                <PageIndicatorStep
                     activeElement={number('activeElement', 0)}
                     size={number('size', 4)}
                     gap={number('gap', 4)}
@@ -104,7 +109,7 @@ import Changelog from '../../CHANGELOG.md?raw';
     })}
 </Story>
 
-<Story name='PageIndicator.Runner'>
+<Story name='PageIndicatorRunner'>
     {React.createElement(() => {
         const colors = select('colors', ['default', 'inverted'], 'default');
         return (
@@ -122,7 +127,7 @@ import Changelog from '../../CHANGELOG.md?raw';
                     bottom: 0,
                 }}
             >
-                <PageIndicator.Runner
+                <PageIndicatorRunner
                     activeElement={number('activeElement', 0)}
                     size={number('size', 4)}
                     elements={number('elements', 10)}

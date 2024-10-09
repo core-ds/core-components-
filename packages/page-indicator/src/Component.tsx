@@ -1,13 +1,6 @@
-import { Bullet } from './components/bullet';
-import { Dynamic } from './components/dynamic';
-import { Runner } from './components/runner';
-import { Step } from './components/step';
-
-export const PageIndicator = {
-    Dynamic,
-    Bullet,
-    Step,
-    Runner,
-};
+export { PageIndicatorBullet } from './components/bullet';
+export { PageIndicatorDynamic } from './components/dynamic';
+export { PageIndicatorRunner } from './components/runner';
+export { PageIndicatorStep } from './components/step';
 
 export * from './types';

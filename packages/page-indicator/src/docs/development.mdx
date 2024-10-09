@@ -1,23 +1,28 @@
 import { ArgsTabs, CssVars } from 'storybook/blocks';
-import { Dynamic } from '../components/dynamic';
-import { Bullet } from '../components/bullet';
-import { Step } from '../components/step';
-import { Runner } from '../components/runner';
+import { PageIndicatorDynamic } from '../components/dynamic';
+import { PageIndicatorBullet } from '../components/bullet';
+import { PageIndicatorStep } from '../components/step';
+import { PageIndicatorRunner } from '../components/runner';
 import vars from '!!raw-loader!../vars.css';
 
 ## Подключение
 
 ```jsx
-import { PageIndicator } from '@alfalab/core-components/page-indicator';
+import {
+    PageIndicatorDynamic,
+    PageIndicatorBullet,
+    PageIndicatorStep,
+    PageIndicatorRunner,
+} from '@alfalab/core-components/page-indicator';
 ```
 
 ## Свойства
 
 <ArgsTabs components={{
-    'PageIndicator.Dynamic': Dynamic,
-    'PageIndicator.Bullet': Bullet,
-    'PageIndicator.Step': Step,
-    'PageIndicator.Runner': Runner,
+    PageIndicatorDynamic,
+    PageIndicatorBullet,
+    PageIndicatorStep,
+    PageIndicatorRunner,
 }} />
 
 ## Переменные

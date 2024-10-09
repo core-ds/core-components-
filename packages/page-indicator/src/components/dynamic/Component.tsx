@@ -3,7 +3,7 @@ import cn from 'classnames';
 
 import { useAnimation } from '@alfalab/core-components-shared';
 
-import { DynamicProps } from '../../types';
+import { PageIndicatorDynamicProps } from '../../types';
 
 import defaultColors from './default.module.css';
 import styles from './index.module.css';
@@ -14,7 +14,7 @@ const colorsStyle = {
     default: defaultColors,
 };
 
-export const Dynamic: FC<DynamicProps> = (props) => {
+export const PageIndicatorDynamic: FC<PageIndicatorDynamicProps> = (props) => {
     const {
         defaultActiveElement: defaultActiveElementIndex = 0,
         activeElement: activeElementIndexFromProps,

@@ -1,4 +1,4 @@
-export interface DynamicProps {
+export interface PageIndicatorDynamicProps {
     /**
      * Индекс выбранного элемента по-умолчанию
      * @default 0
@@ -54,7 +54,7 @@ export interface DynamicProps {
     colors?: 'default' | 'inverted';
 }
 
-export interface BulletProps {
+export interface PageIndicatorBulletProps {
     /**
      * Индекс выбранного элемента
      */
@@ -81,7 +81,7 @@ export interface BulletProps {
     colors?: 'default' | 'inverted';
 }
 
-export interface StepProps {
+export interface PageIndicatorStepProps {
     /**
      * Индекс выбранного элемента
      */
@@ -108,7 +108,7 @@ export interface StepProps {
     colors?: 'default' | 'inverted';
 }
 
-export interface RunnerProps {
+export interface PageIndicatorRunnerProps {
     /**
      * Индекс выбранного элемента
      */

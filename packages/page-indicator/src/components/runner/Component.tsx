@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import cn from 'classnames';
 
-import { RunnerProps } from '../../types';
+import { PageIndicatorRunnerProps } from '../../types';
 
 import defaultColors from './default.module.css';
 import styles from './index.module.css';
@@ -12,7 +12,7 @@ const colorsStyle = {
     default: defaultColors,
 };
 
-export const Runner: FC<RunnerProps> = ({
+export const PageIndicatorRunner: FC<PageIndicatorRunnerProps> = ({
     activeElement,
     elements: elementsCount = 10,
     size = 4,

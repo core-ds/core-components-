@@ -2,7 +2,7 @@ import React, { createRef, FC, useMemo } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import cn from 'classnames';
 
-import { BulletProps } from '../../types';
+import { PageIndicatorBulletProps } from '../../types';
 
 import { calcParams } from './utils';
 
@@ -18,7 +18,7 @@ const colorsStyle = {
 const transitionClassess = {} as const;
 const transitionTimeout = { enter: 200, exit: 0 } as const;
 
-export const Bullet: FC<BulletProps> = ({
+export const PageIndicatorBullet: FC<PageIndicatorBulletProps> = ({
     elements: elementsCount = 10,
     activeElement: activeElementIndex,
     size = 8,

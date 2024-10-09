@@ -11,24 +11,24 @@ const screenshotTesting = setupScreenshotTesting({
     expect,
 });
 
-describe('PageIndicator.Dynamic', () =>
+describe('PageIndicatorDynamic', () =>
     createPreview({
-        componentName: 'PageIndicator',
-        subComponentName: 'Dynamic',
+        packageName: 'page-indicator',
+        componentName: 'PageIndicatorDynamic',
         knobs: {
             active: false,
         },
     }));
 
 describe(
-    'PageIndicator.Dynamic | main props',
+    'PageIndicatorDynamic | main props',
     screenshotTesting({
         cases: [
             [
                 'sprite',
                 createSpriteStorybookUrl({
-                    componentName: 'PageIndicator',
-                    subComponentName: 'Dynamic',
+                    packageName: 'page-indicator',
+                    componentName: 'PageIndicatorDynamic',
                     knobs: {
                         activeElement: [0, 5, 8],
                         elements: [10, 12],
@@ -48,24 +48,24 @@ describe(
     }),
 );
 
-describe('PageIndicator.Bullet', () =>
+describe('PageIndicatorBullet', () =>
     createPreview({
-        componentName: 'PageIndicator',
-        subComponentName: 'Bullet',
+        packageName: 'page-indicator',
+        componentName: 'PageIndicatorBullet',
         knobs: {
             activeElement: 0,
         },
     }));
 
 describe(
-    'PageIndicator.Bullet | main props',
+    'PageIndicatorBullet | main props',
     screenshotTesting({
         cases: [
             [
                 'sprite',
                 createSpriteStorybookUrl({
-                    componentName: 'PageIndicator',
-                    subComponentName: 'Bullet',
+                    packageName: 'page-indicator',
+                    componentName: 'PageIndicatorBullet',
                     knobs: {
                         activeElement: [0, 2, 5],
                         elements: [5, 6, 10],
@@ -83,11 +83,11 @@ describe(
     }),
 );
 
-describe('PageIndicator.Step', () =>
+describe('PageIndicatorStep', () =>
     createPreview(
         {
-            componentName: 'PageIndicator',
-            subComponentName: 'Step',
+            packageName: 'page-indicator',
+            componentName: 'PageIndicatorStep',
             knobs: {
                 activeElement: 0,
             },
@@ -106,14 +106,14 @@ describe('PageIndicator.Step', () =>
     ));
 
 describe(
-    'PageIndicator.Step | main props',
+    'PageIndicatorStep | main props',
     screenshotTesting({
         cases: [
             [
                 'sprite',
                 createSpriteStorybookUrl({
-                    componentName: 'PageIndicator',
-                    subComponentName: 'Step',
+                    packageName: 'page-indicator',
+                    componentName: 'PageIndicatorStep',
                     knobs: {
                         activeElement: [0, 5, 8],
                         elements: [10, 12],
@@ -131,11 +131,11 @@ describe(
     }),
 );
 
-describe('PageIndicator.Runner', () =>
+describe('PageIndicatorRunner', () =>
     createPreview(
         {
-            componentName: 'PageIndicator',
-            subComponentName: 'Runner',
+            packageName: 'page-indicator',
+            componentName: 'PageIndicatorRunner',
             knobs: {
                 activeElement: 0,
             },
@@ -154,14 +154,14 @@ describe('PageIndicator.Runner', () =>
     ));
 
 describe(
-    'PageIndicator.Runner | main props',
+    'PageIndicatorRunner | main props',
     screenshotTesting({
         cases: [
             [
                 'sprite',
                 createSpriteStorybookUrl({
-                    componentName: 'PageIndicator',
-                    subComponentName: 'Runner',
+                    packageName: 'page-indicator',
+                    componentName: 'PageIndicatorRunner',
                     knobs: {
                         activeElement: [0, 5, 8],
                         elements: [10, 12],
