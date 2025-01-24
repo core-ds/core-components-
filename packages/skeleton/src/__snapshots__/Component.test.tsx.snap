@@ -6,13 +6,13 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="component component animate"
+        class="component border-radius-top-left-8 border-radius-top-right-8 border-radius-bottom-left-8 border-radius-bottom-right-8 component animate"
       />
     </div>
   </body>,
   "container": <div>
     <div
-      class="component component animate"
+      class="component border-radius-top-left-8 border-radius-top-right-8 border-radius-bottom-left-8 border-radius-bottom-right-8 component animate"
     />
   </div>,
   "debug": [Function],
