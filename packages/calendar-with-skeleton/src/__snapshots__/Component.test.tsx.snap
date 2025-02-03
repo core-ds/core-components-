@@ -914,25 +914,25 @@ exports[`Calendar Render tests should render skeleton when calendarVisible=\`fal
       class="skeleton"
     >
       <div
-        class="component component animate header"
+        class="component border-radius-top-left-8 border-radius-top-right-8 border-radius-bottom-left-8 border-radius-bottom-right-8 component animate header"
       />
       <div
-        class="component component animate weekDays"
+        class="component border-radius-top-left-8 border-radius-top-right-8 border-radius-bottom-left-8 border-radius-bottom-right-8 component animate weekDays"
       />
       <div
-        class="component component animate row"
+        class="component border-radius-top-left-8 border-radius-top-right-8 border-radius-bottom-left-8 border-radius-bottom-right-8 component animate row"
       />
       <div
-        class="component component animate row"
+        class="component border-radius-top-left-8 border-radius-top-right-8 border-radius-bottom-left-8 border-radius-bottom-right-8 component animate row"
       />
       <div
-        class="component component animate row"
+        class="component border-radius-top-left-8 border-radius-top-right-8 border-radius-bottom-left-8 border-radius-bottom-right-8 component animate row"
       />
       <div
-        class="component component animate row"
+        class="component border-radius-top-left-8 border-radius-top-right-8 border-radius-bottom-left-8 border-radius-bottom-right-8 component animate row"
       />
       <div
-        class="component component animate row"
+        class="component border-radius-top-left-8 border-radius-top-right-8 border-radius-bottom-left-8 border-radius-bottom-right-8 component animate row"
       />
     </div>
   </div>
